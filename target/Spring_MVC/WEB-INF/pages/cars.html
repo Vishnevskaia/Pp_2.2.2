@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+
+<!--This result is: <h2 th:text="${result} "></h2>-->
+
+<h1>Car List</h1>
+<p th:text="${message}"/>
+<br/>
+<div>
+    <table border = "10">
+        <tr>
+            <th>Model</th>
+            <th>Series</th>
+            <th>Transmission</th>
+        </tr>
+        <tr th:each = "res : ${result}">
+            <td th:utext ="${res.getCarModel()}">...</td>
+            <td th:utext ="${res.getCarSeries()}">...</td>
+            <td th:utext ="${res.getTransmission()}">...</td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+<!--<table>-->
+<!--    <th:block th:each="res : ${result}">-->
+<!--        <tr>-->
+<!--            <td th:text="${result.}">...</td>-->
+<!--            <td th:text="${result}">...</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td colspan="2" th:text="${result}">...</td>-->
+<!--        </tr>-->
+<!--    </th:block>-->
+<!--</table>-->
+
+</body>
+</html>
